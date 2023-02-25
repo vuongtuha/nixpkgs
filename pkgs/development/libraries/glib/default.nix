@@ -85,10 +85,7 @@ stdenv.mkDerivation (finalAttrs: {
     ./glib-appinfo-watch.patch
     ./schema-override-variable.patch
 
-    # Add support for the GNOME’s default terminal emulator.
-    # https://gitlab.gnome.org/GNOME/glib/-/issues/2618
-    ./gnome-console-support.patch
-    # Do the same for Pantheon’s terminal emulator.
+    # Add support for Pantheon’s terminal emulator.
     ./elementary-terminal-support.patch
 
     # GLib contains many binaries used for different purposes;
@@ -195,6 +192,7 @@ stdenv.mkDerivation (finalAttrs: {
     patchShebangs glib/gen-unicode-tables.pl
     patchShebangs glib/tests/gen-casefold-txt.py
     patchShebangs glib/tests/gen-casemap-txt.py
+    patchShebangs tools/gen-visibility-macros.py
 
     # Needs machine-id, comment the test
     sed -e '/\/gdbus\/codegen-peer-to-peer/ s/^\/*/\/\//' -i gio/tests/gdbus-peer.c
