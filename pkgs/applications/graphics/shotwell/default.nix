@@ -31,6 +31,7 @@
 , gobject-introspection
 , itstool
 , libsecret
+, libportal-gtk3
 , gsettings-desktop-schemas
 , python3
 }:
@@ -86,6 +87,7 @@ stdenv.mkDerivation rec {
     gcr
     gnome.adwaita-icon-theme
     libsecret
+    libportal-gtk3
   ];
 
   postPatch = ''
