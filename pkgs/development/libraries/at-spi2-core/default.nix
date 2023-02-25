@@ -58,7 +58,6 @@ stdenv.mkDerivation rec {
   doCheck = false;
 
   mesonFlags = [
-    "-Dintrospection=yes"
     # Provide dbus-daemon fallback when it is not already running when
     # at-spi2-bus-launcher is executed. This allows us to avoid
     # including the entire dbus closure in libraries linked with
