@@ -7,6 +7,7 @@
 , pkg-config
 , asciidoc
 , gobject-introspection
+, vala
 , python3
 , docbook-xsl-nons
 , docbook_xml_dtd_45
@@ -55,6 +56,7 @@ stdenv.mkDerivation rec {
     libxslt
     wrapGAppsNoGuiHook
     gobject-introspection
+    vala
     docbook-xsl-nons
     docbook_xml_dtd_45
     (python3.pythonForBuild.withPackages (p: [ p.pygobject3 ]))
