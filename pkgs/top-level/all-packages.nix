@@ -20995,6 +20995,8 @@ with pkgs;
 
   libdecor = callPackage ../development/libraries/libdecor { };
 
+  libdex = callPackage ../development/libraries/libdex { };
+
   libdigidocpp = callPackage ../development/libraries/libdigidocpp { };
 
   libdiscid = callPackage ../development/libraries/libdiscid { };
