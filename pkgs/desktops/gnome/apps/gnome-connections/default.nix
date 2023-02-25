@@ -7,7 +7,6 @@
 , vala
 , gettext
 , itstool
-, python3
 , appstream-glib
 , desktop-file-utils
 , wrapGAppsHook
@@ -37,7 +36,6 @@ stdenv.mkDerivation rec {
     vala
     gettext
     itstool
-    python3
     appstream-glib
     desktop-file-utils
     glib # glib-compile-resources
@@ -53,11 +51,6 @@ stdenv.mkDerivation rec {
     libxml2
     gtk-frdp
   ];
-
-  postPatch = ''
-    chmod +x build-aux/meson/postinstall.py
-    patchShebangs build-aux/meson/postinstall.py
-  '';
 
   passthru = {
     updateScript = gnome.updateScript {
