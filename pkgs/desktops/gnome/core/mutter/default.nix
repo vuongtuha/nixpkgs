@@ -140,7 +140,7 @@ stdenv.mkDerivation (finalAttrs: {
   separateDebugInfo = true;
 
   passthru = {
-    libdir = "${finalAttrs.finalPackage}/lib/mutter-11";
+    libdir = "${finalAttrs.finalPackage}/lib/mutter-12";
 
     tests = {
       libdirExists = runCommand "mutter-libdir-exists" {} ''
