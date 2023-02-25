@@ -10,7 +10,6 @@
 , gtk4
 , pango
 , wrapGAppsHook4
-, python3
 , desktop-file-utils
 , gobject-introspection
 , gjs
@@ -35,7 +34,6 @@ stdenv.mkDerivation rec {
     meson
     ninja
     pkg-config
-    python3
     desktop-file-utils
     wrapGAppsHook4
   ];
