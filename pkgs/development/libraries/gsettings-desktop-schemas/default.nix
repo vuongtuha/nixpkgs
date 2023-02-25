@@ -5,7 +5,6 @@
 , gobject-introspection
 , meson
 , ninja
-, python3
   # just for passthru
 , gnome
 }:
@@ -26,14 +25,8 @@ stdenv.mkDerivation rec {
     meson
     ninja
     pkg-config
-    python3
     gobject-introspection
   ];
-
-  postPatch = ''
-    chmod +x build-aux/meson/post-install.py
-    patchShebangs build-aux/meson/post-install.py
-  '';
 
   preInstall = ''
     # Meson installs the schemas to share/glib-2.0/schemas
