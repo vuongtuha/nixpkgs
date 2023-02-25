@@ -13,6 +13,7 @@
 , libportal-gtk4
 , gnome-desktop
 , gnome-online-accounts
+, qrencode
 , wrapGAppsHook4
 , folks
 , libxml2
@@ -57,6 +58,7 @@ stdenv.mkDerivation rec {
     libadwaita
     libxml2
     gnome-online-accounts
+    qrencode
   ];
 
   doCheck = true;
