@@ -17,6 +17,7 @@
 , xvfb-run
 , xkeyboard_config
 , libxkbfile
+, libICE
 , libXdamage
 , libxkbcommon
 , libXtst
@@ -24,7 +25,10 @@
 , libdrm
 , gsettings-desktop-schemas
 , glib
+, atk
 , gtk3
+, gtk4
+, fribidi
 , gnome-desktop
 , pipewire
 , libgudev
@@ -35,7 +39,7 @@
 , gnome-settings-daemon
 , xorgserver
 , python3
-, wrapGAppsHook
+, wrapGAppsHook4
 , gi-docgen
 , sysprof
 , libsysprof-capture
@@ -86,7 +90,7 @@ stdenv.mkDerivation (finalAttrs: {
     xvfb-run
     pkg-config
     python3
-    wrapGAppsHook
+    wrapGAppsHook4
     gi-docgen
     xorgserver # for cvt command
   ];
@@ -99,7 +103,10 @@ stdenv.mkDerivation (finalAttrs: {
     gnome-settings-daemon
     gobject-introspection
     gsettings-desktop-schemas
+    atk
     gtk3
+    gtk4
+    fribidi
     libcanberra
     libdrm
     libgudev
@@ -108,6 +115,7 @@ stdenv.mkDerivation (finalAttrs: {
     libwacom
     libxkbcommon
     libxkbfile
+    libICE
     libXdamage
     colord
     lcms2
@@ -131,7 +139,7 @@ stdenv.mkDerivation (finalAttrs: {
   postFixup = ''
     # Cannot be in postInstall, otherwise _multioutDocs hook in preFixup will move right back.
     # TODO: Move this into a directory devhelp can find.
-    moveToOutput "share/mutter-11/doc" "$devdoc"
+    moveToOutput "share/mutter-12/doc" "$devdoc"
   '';
 
   # Install udev files into our own tree.
