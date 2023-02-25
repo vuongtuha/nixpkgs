@@ -20,8 +20,6 @@
 , libsoup_3
 , libosinfo
 , systemd
-, tracker
-, tracker-miners
 , vala
 , libcap
 , yajl
@@ -38,7 +36,6 @@
 , libarchive
 , acl
 , libgudev
-, libsecret
 , libcap_ng
 , numactl
 , libapparmor
@@ -105,7 +102,6 @@ stdenv.mkDerivation rec {
     libhandy
     libosinfo
     librsvg
-    libsecret
     libsoup_3
     libusb1
     libvirt
@@ -115,8 +111,6 @@ stdenv.mkDerivation rec {
     spice-gtk
     spice-protocol
     systemd
-    tracker
-    tracker-miners
     vte
     webkitgtk_4_1
     yajl
