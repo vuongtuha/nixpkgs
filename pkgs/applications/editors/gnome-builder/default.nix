@@ -18,6 +18,7 @@
 , json-glib
 , jsonrpc-glib
 , libadwaita
+, libdex
 , libpanel
 , libpeas
 , libportal-gtk4
@@ -92,6 +93,7 @@ stdenv.mkDerivation rec {
     json-glib
     jsonrpc-glib
     libadwaita
+    libdex
     libpanel
     libxml2
     ostree
