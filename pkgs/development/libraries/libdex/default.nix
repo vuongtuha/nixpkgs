@@ -1,6 +1,7 @@
 { stdenv
 , lib
 , fetchFromGitLab
+, gi-docgen
 , gobject-introspection
 , meson
 , ninja
@@ -15,7 +16,7 @@ stdenv.mkDerivation rec {
   pname = "libdex";
   version = "0.1.0";
 
-  outputs = [ "out" "dev" ];
+  outputs = [ "out" "dev" "devdoc" ];
 
   src = fetchFromGitLab {
     domain = "gitlab.gnome.org";
@@ -26,6 +27,7 @@ stdenv.mkDerivation rec {
   };
 
   nativeBuildInputs = [
+    gi-docgen
     gobject-introspection
     meson
     ninja
@@ -38,7 +40,16 @@ stdenv.mkDerivation rec {
     liburing
   ];
 
+  mesonFlags = [
+    "-Ddocs=true"
+  ];
+
   doCheck = true;
+
+  postFixup = ''
+    # Cannot be in postInstall, otherwise _multioutDocs hook in preFixup will move right back.
+    moveToOutput "share/doc" "$devdoc"
+  '';
 
   passthru.updateScript = gitUpdater { };
 
