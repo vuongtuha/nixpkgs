@@ -6,11 +6,11 @@
 , pkg-config
 , libxml2
 , gnome
-, gtk3
+, gtk4
 , gettext
-, libX11
+, libadwaita
 , itstool
-, wrapGAppsHook
+, wrapGAppsHook4
 }:
 
 stdenv.mkDerivation rec {
@@ -22,10 +22,6 @@ stdenv.mkDerivation rec {
     sha256 = "XsvlcxBVqYfiDB+vBQdfECLd4wenLp0UUiRA1IHWhtA=";
   };
 
-  patches = [
-    ./fix-icon-install.patch
-  ];
-
   nativeBuildInputs = [
     meson
     ninja
@@ -33,12 +29,12 @@ stdenv.mkDerivation rec {
     gettext
     itstool
     libxml2
-    wrapGAppsHook
+    wrapGAppsHook4
   ];
 
   buildInputs = [
-    gtk3
-    libX11
+    gtk4
+    libadwaita
   ];
 
   passthru = {
