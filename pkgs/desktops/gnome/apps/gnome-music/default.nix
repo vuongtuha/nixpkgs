@@ -23,7 +23,7 @@
 , itstool
 , gnome
 , gst_all_1
-, libsoup
+, libsoup_3
 , libadwaita
 , gsettings-desktop-schemas
 }:
@@ -64,7 +64,7 @@ python3.pkgs.buildPythonApplication rec {
     grilo
     grilo-plugins
     libnotify
-    libsoup
+    libsoup_3
     libadwaita
     gsettings-desktop-schemas
     tracker
